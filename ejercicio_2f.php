@@ -75,6 +75,27 @@ AAAAAAAAAAA
 
 */
 
+
+/*TAREA hacer una cruz +
+n=3
+
+---+++
+---+++
+---+++
++++++++++
++++++++++
++++++++++
+---+++
+---+++
+---+++
+
+/TAREA una barra de dividir con barras de dividir
+___///
+__///
+_///
+///
+
+*/
 ?>
 </body>
 </html>
