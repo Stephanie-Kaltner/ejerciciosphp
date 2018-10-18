@@ -87,7 +87,6 @@ $cruz  $i  espacios  /
 */
 
 //0TAREA: $imprimirextramocruz, hacer una funcion para hacer ambos extremos de la cruz sin duplicar el codigo
-
 //1TAREA: imprimir una T (mayuscula)
 //2TAREA: imprimir una F (mayuscula)
 //3TAREA: imprimir una E (mayuscula)
