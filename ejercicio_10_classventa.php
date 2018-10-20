@@ -45,6 +45,16 @@ function getDescripcion(){
   return $this->$descripcion;
 }
 
+function getImporte(){
+  return $this->$importe;
+}
+
+function getTotal(){
+  return $this->$total;
+}
+
+
+
 public function setDescripcion($descripcion){
   if (in_array($descripcion, self::MODELOS_POSIBLES)) {
     $this-> descripcion[]=$descripcion;
@@ -52,15 +62,6 @@ public function setDescripcion($descripcion){
   else {
     echo "Error modelo: $descripcion";
   }
-}
-
-
-function getImporte(){
-  return $this->$importe;
-}
-
-function getTotal(){
-  return $this->$total;
 }
 
 

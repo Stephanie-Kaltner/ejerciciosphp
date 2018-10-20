@@ -40,6 +40,8 @@ function getPago(){
   return $this->$pago;
 }
 
+
+
 public function setPago($pago){
   if (in_array($pago, self::MODO_PAGO)){
     $this-> pago[]=$pago;
@@ -58,18 +60,18 @@ public function setPago($pago){
 
 
 echo "CLIENTE 1: ";
-$cliente1=new Cliente("Sebastian Colb", "Av. siempre viva 123", "Springfield", "1654", Cliente::MODO_PAGO[2]);
+$cliente1=new Cliente("Sebastian Colb", "Calle falsa 123", "Springfield", "1654", Cliente::MODO_PAGO[2]);
 var_dump($cliente1);
 echo "<br><br>";
 
 
 echo "CLIENTE 2: ";
-$cliente2=new Cliente("Claudia Glass", "Av. siempre viva 123", "Springfield", "1654", Cliente::MODO_PAGO[0]);
+$cliente2=new Cliente("Claudia Glass", "Av. siempre viva 742", "Springfield", "1654", Cliente::MODO_PAGO[0]);
 var_dump($cliente2);
 echo "<br><br>";
 
 
 echo "CLIENTE 3: ";
-$cliente3=new Cliente("Av. siempre viva 123", "Springfield", "1654", Cliente::MODO_PAGO[1]);
+$cliente3=new Cliente("Mariano Galh", "Av. siempre viva 123", "Springfield", "1654", Cliente::MODO_PAGO[1]);
 var_dump($cliente3);
 echo "<br><br>";

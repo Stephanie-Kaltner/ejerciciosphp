@@ -32,11 +32,6 @@ function __construct($corpinio, $bombacha, $color, $talle, $tela, $precio){
 function getCorpinio(){
   return $this->corpinio;
 }
-public function setCorpinio($corpinio){
-  if(in_array($corpinio, self::MODELOS_CORPINIOS)){
-    $this-> corpinio[] =$corpinio;
-  }
-}
 
 function getBombacha(){
   return $this->bombacha;
@@ -44,15 +39,6 @@ function getBombacha(){
 
 function getColor(){
   return $this->color;
-}
-
-public function setColor($color){
-  if(in_array($color, self::COLORES_POSIBLES)){
-    $this-> color[] = $color;
-  }
-  else{
-    echo "Color inesistente: $color";
-  }
 }
 
 function getTalle(){
@@ -66,6 +52,24 @@ function getTela(){
 function getPrecio(){
   return $this->precio;
 }
+
+
+
+public function setCorpinio($corpinio){
+  if(in_array($corpinio, self::MODELOS_CORPINIOS)){
+    $this-> corpinio[] =$corpinio;
+  }
+}
+
+public function setColor($color){
+  if(in_array($color, self::COLORES_POSIBLES)){
+    $this-> color[] = $color;
+  }
+  else{
+    echo "Color inesistente: $color";
+  }
+}
+
 
 
 }
