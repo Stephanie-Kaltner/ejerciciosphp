@@ -1,0 +1,28 @@
+body {
+  background: black;
+  color: white;
+}
+
+h2{
+  color: purple;
+}
+
+p{
+  font-family: monospace;
+  text-align: center;
+}
+
+.subrayado__con__dos__rayitas{
+  text-decoration: line-through underline;
+}
+
+
+#div1 {
+  background: #B61173;
+}
+
+#div1 .subrayado{
+  color: yellow;
+  font-variant: small-caps;
+}
+ 

@@ -1,0 +1,51 @@
+h1{
+  font-family: 'Open Sans', sans-serif, 700;
+  color: #38001C;
+  margin-top: 2%;
+  margin-left: 15%;
+  padding-left: 2%;
+}
+
+.tablero{
+  margin-top: 0.5%;
+  margin-left: 2%;
+  border: 2px solid;
+  border-color: #017A74;
+  width: 50%;
+  font-family: 'Open Sans', sans-serif;
+  color: #38001C;
+}
+
+.tablero_lineas{
+  border: 1px solid;
+  color: #38001C;
+  height: 50px;
+  padding-left: 20%;
+  }
+
+th, td{
+  border: 1px solid;
+  padding: 1%;
+  border-color: #017A74;
+}
+
+.btn{
+   margin-top: 2%;
+   margin-left: 2%;
+   font-size: 13px;
+   padding: 5px 10px;
+   border-radius: 4px;
+   background: #78BE97;
+   border: #78BE97;
+ 
+}
+
+.btn-secundary{
+  font-family: 'Open Sans', sans-serif, 700;
+  font-size: 12px;
+  padding: 2px, 5px;
+  border-radius: 2px;
+  background: #A7DDA7;
+  border: #A7DDA7;
+  color: #0B476D;
+}

@@ -2,23 +2,20 @@
 
 class Cliente{
 
-  const MODO_PAGO=array("Tarjeta", "Efectivo", "Transferencia");
-
 private $nombre_apellido;
 private $calle;
 private $localidad;
 private $codigo_postal;
-private $pago;
+private $cuit;
 
-
-function __construct($nombre_apellido, $calle, $localidad, $codigo_postal, $pago){
- $this-> nombre_apellido= $nombre_apellido;
- $this-> calle= $calle;
- $this-> localidad= $localidad;
- $this-> codigo_postal= $codigo_postal;
- $this-> pago= $pago;
-
+function __construct($nombre_apellido, $calle, $localidad, $codigo_postal, $cuit){
+ $this->nombre_apellido = $nombre_apellido;
+ $this->calle = $calle;
+ $this->localidad = $localidad;
+ $this->codigo_postal = $codigo_postal;
+ $this->cuit = $cuit;
 }
+
 
 function getNombre_apellido(){
   return $this->$nombre_apellido;
@@ -35,22 +32,10 @@ function getLocalidad(){
 function getCodigo_postal(){
   return $this->$codigo_postal;
 }
-
-function getPago(){
-  return $this->$pago;
+ 
+function getCuit(){
+  return $this->$cuit;
 }
-
-
-
-public function setPago($pago){
-  if (in_array($pago, self::MODO_PAGO)){
-    $this-> pago[]=$pago;
-  }
-  else {
-    echo "Pago incorrecto: $pago";
-  }
-}
-
 
 
 }
@@ -60,18 +45,18 @@ public function setPago($pago){
 
 
 echo "CLIENTE 1: ";
-$cliente1=new Cliente("Sebastian Colb", "Calle falsa 123", "Springfield", "1654", Cliente::MODO_PAGO[2]);
+$cliente1=new Cliente("Sebastian Colb", "Calle falsa 123", "Springfield", "1654", "27-20202020-9");
 var_dump($cliente1);
 echo "<br><br>";
 
 
 echo "CLIENTE 2: ";
-$cliente2=new Cliente("Claudia Glass", "Av. siempre viva 742", "Springfield", "1654", Cliente::MODO_PAGO[0]);
+$cliente2=new Cliente("Claudia Glass", "Av. siempre viva 742", "Springfield", "1654", "27-20202020-9");
 var_dump($cliente2);
 echo "<br><br>";
 
 
 echo "CLIENTE 3: ";
-$cliente3=new Cliente("Mariano Galh", "Av. siempre viva 123", "Springfield", "1654", Cliente::MODO_PAGO[1]);
+$cliente3=new Cliente("Mariano Galh", "Av. siempre viva 123", "Springfield", "1654", "27-20202020-9");
 var_dump($cliente3);
 echo "<br><br>";
