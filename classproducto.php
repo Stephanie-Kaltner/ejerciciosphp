@@ -9,7 +9,7 @@ class Producto{
 
    const MODELOS_BOMBACHAS= array("Culote", "Vedetina", "Vedetinales", "Vedetina alta", "Culoteles", "Tanga", "Colales");
 
-
+ private $id;
  private $corpinio;
  private $bombacha;
  private $color=array();
@@ -26,14 +26,19 @@ function __construct($corpinio, $bombacha, $color, $talle, $tela, $precio){
   $this->talle = $talle;
   $this->tela = $tela;
   $this->precio = $precio;
+  $this->id = count(self::$productos);
   self::$productos[] = $this;
+}
+
+function getId(){
+  return $this->id;
 }
 
 
 function getCorpinio(){
   return $this->corpinio;
 }
- 
+
 function getBombacha(){
   return $this->bombacha;
 }
@@ -53,7 +58,6 @@ function getTela(){
 function getPrecio(){
   return $this->precio;
 }
-
 
 
 public function setCorpinio($corpinio){
@@ -76,6 +80,12 @@ public static function getAll(){
 return self::$productos;
 }
 
+public static function getByID($id_producto){
+  if (isset(self::$productos[$id_producto])) {
+    return self::$productos[$id_producto];
+  } //a partir de aqui quiere decir que no encontro ese producto, por eso no lleva else
+  echo "producto inexistente";
+}
 
 }
 
