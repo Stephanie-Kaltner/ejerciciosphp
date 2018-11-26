@@ -2,7 +2,7 @@
   require_once 'plantillas_presentacion/cabecera.php';
  ?>
 <h1>Listado de Productos</h1>
-  <input class="btn btn-primary" type="submit" value="Agregar producto">
+  <a href="formularioproductos.php">Agregar producto</a>
     <table class="tablero">
       <tr class="tablero tablero_lineas">
         <th>Id</th>
@@ -21,16 +21,22 @@
       <tr class="tablero tablero_lineas">
        <td><?php echo $producto->getId();?></td>
        <td><?php echo $producto->getCorpinio();?></td>
-       <td><?php echo $producto->getBombacha(); ?></td>
-       <td><?php echo $producto->getColor(); ?></td>
-       <td><?php echo $producto->getTela(); ?></td>
-       <td><?php echo $producto->getTalle(); ?></td>
-       <td><?php echo $producto->getPrecio(); ?></td>
+       <td><?php echo $producto->getBombacha();?></td>
+       <td><?php echo $producto->getColor();?></td>
+       <td><?php echo $producto->getTela();?></td>
+       <td><?php echo $producto->getTalle();?></td>
+       <td><?php echo $producto->getPrecio();?></td>
       <td>
-       <input class="btn btn-secundary" type="submit" value="Modificar">
-       <input class="btn btn-secundary" type="submit" value="Eliminar">
+       <a href="formularioproductos.php?id=<?php echo $producto->getId();?>">
+       <i class="far fa-edit"></i>
+       </a>
+
+      <a href="borrarproducto.php?id=<?php echo $producto->getId(); ?>">
+       <i class="far fa-trash-alt"></i>
+     </a>
+
        <a href="verproducto.php?id=<?php echo $producto->getId();?>">
-          <span class="glyphicon glyphicon-eye-open"></span>
+       <i class="fas fa-eye"></i>
        </a>
       </td>
      </tr>
@@ -53,6 +59,4 @@
 //TAREA3: arriba y afuera de la tabla incluir un boton para agregar nuevos productos - HECHO
 //TAREA4: crear archivo aparte que sea formulario de productos y hacer el formulario para cargar y subir cada cosa(bombacha, corpiñios, etc) con boton guardar
 //TAREA5: llenar el formulario con el primer producto que esta en el getAll
-
-
  ?>
