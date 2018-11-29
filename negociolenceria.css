@@ -37,7 +37,6 @@ th, td{
    border-radius: 4px;
    background: #78BE97;
    border: #78BE97;
-
 }
 
 .btn-secundary{
@@ -51,7 +50,8 @@ th, td{
 }
 
 
-.botonera{
-
-
+.renglon_formulario{
+  margin: 1%;
+  font-family: 'Open sans', sans-serif;
+  color: #0B476D:
 }

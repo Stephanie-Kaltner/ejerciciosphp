@@ -6,8 +6,8 @@
 
 <form method="post">
   <p>Está seguro de borrar este producto? </p>
-  <input type="submit" name="confirmado" value="si"></input>
-  <a href="listadodeproductos.php">NO</a>
+  <input type="submit" name="confirmado" value="si" class="btn btn-secundary"></input>
+  <a href="listadodeproductos.php" class="btn btn-secundary">NO</a>
 </form>
 
 
@@ -26,13 +26,14 @@
    die();
  }
 
-//TAREA 1: buscar popups de bootstrap
-//TAREA 2: poner todo bonito
-//TAREA 3: que los botones si y no sean iguales y sigan funcionando
+//TAREA 1: buscar popups de bootstrap - buscando
+//TAREA 2: poner todo bonito -- TRATANDO
+//TAREA 3: que los botones si y no sean iguales y sigan funcionando / HECHO
 //TAREA 4: agregar un campo de descripcion a producto y que siga funcionando
 
-//SIGUIENTE CLASE: PERSISTENCIA EN BASE DE DATOS EN SQL
-//BAJAR WORDPRESS
+
+
+//SIGUIENTE CLASE: PERSISTENCIA EN BASE DE DATOS EN SQL - Insert y update para el lunes
 //VER CAKEPHP
 
 

@@ -23,14 +23,14 @@ class Producto{
 
  private static $productos= array();
 
-function __construct($corpinio, $bombacha, $color, $talle, $tela, $precio){
+function __construct($corpinio, $bombacha, $color, $talle, $tela, $precio, $id=NULL){ //no siempre voy a recibir el id, cuando no lo reciba lo tomo como null (es un parametro opcional)
   $this-> setCorpinio($corpinio);
   $this->bombacha = $bombacha;
   $this-> setColor($color);
   $this-> setTela($tela);
   $this-> setTalle($talle);
   $this->precio = $precio;
-  $this->id = count(self::$productos);
+  $this->id = $id;
   self::$productos[] = $this;
 }
 
@@ -125,19 +125,54 @@ $this->precio = $precio;
 
 
 public static function getAll(){
-  $productos_serialize= file_get_contents("productos.ser");
-  self::$productos= unserialize($productos_serialize);
+/* Ejemplo de persistencia en archivo
+ $productos_serialize= file_get_contents("productos.ser");
+  self::$productos= unserialize($productos_serialize);*/
+  //persistencia en base de datos
+  $pdo= self::getPDO();
+  $sql= "SELECT * FROM productos";
+  $productos= array();
+  foreach ($pdo->query($sql) as $row){
+    $productos[$row["id"]]= new Producto($row['corpinio'], $row['bombacha'], $row['color'], $row['talle'], $row['tela'], $row['precio'], $row['id']);
+  }
+  self::$productos= $productos;
+
 return self::$productos;
 }
 
 
 public static function getByID($id_producto){
-  self::getAll();
+  /*self::getAll();
   if (isset(self::$productos[$id_producto])) {
     return self::$productos[$id_producto];
   } //a partir de aqui quiere decir que no encontro ese producto, por eso no lleva else
-  echo "producto inexistente";
+  echo "producto inexistente";*/
+  $pdo= self::getPDO();
+  $sql= "SELECT * FROM productos WHERE id= :id";
+  $statement= $pdo->prepare($sql);
+  $statement-> execute(array(":id"=>$id_producto));
+  $row= $statement-> fetch(PDO::FETCH_ASSOC);
+    $producto= new Producto($row['corpinio'], $row['bombacha'], $row['color'], $row['talle'], $row['tela'], $row['precio'], $row['id']);
+return $producto;
 }
+
+
+private static function getPDO(){
+  $dsn= "mysql:dbname=lenceria;host=localhost";
+  $username= "usuario_lenceria";
+  $password= "s73f13sc0p4d4";
+  $dbh= NULL;
+
+  try {
+    $dbh = new PDO($dsn, $username, $password);
+  }
+  catch (PDOException $e){
+    echo 'Connection failed: ' . $e->getMessage();
+  }
+  return $dbh;
+}
+
+
 
 }
 
